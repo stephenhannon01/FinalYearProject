@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="//d3plus.org/js/d3.js"></script>
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<style>
+  a#google {
+    background-color: #cc0000;
+    color: white;
+    display: block;
+    font-size: 24px;
+    margin: 50px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+  }
+</style>
+
+<div id="viz"></div>
+
+<script>
+  var sample_data = [
+    {"value": 100, "name": "alpha", "button": "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>"},
+    {"value": 70, "name": "beta", "button": "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>"},
+    {"value": 40, "name": "gamma", "button": "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>"},
+    {"value": 15, "name": "delta", "button": "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>"},
+    {"value": 5, "name": "epsilon", "button": "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>"},
+    {"value": 1, "name": "zeta", "button": "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>"}
+  ]
+  
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .data(sample_data)
+    .id("name")
+    .size("value")
+    .tooltip({"html": function(node) {
+			if(node=="alpha"){
+				return "<a id='google' href='http://www.imdb.com' target='_blank'>Click here to go to Google</a><img src='gonegirl.jpg'><p>Great movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movieGreat movie</p>";
+			}else{
+				return "<a id='google' href='http://www.google.com' target='_blank'>Click here to go to Google</a>";
+			}
+		}
+	})
+    .type("tree_map")
+    .draw()
+</script>
+
+
+if (hour < 18) {
+    greeting = "Good day";
+} 
